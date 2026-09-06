@@ -1,0 +1,3 @@
+.filter-blur{filter:blur(8px)}.filter-blur-sm{filter:blur(4px)}.filter-blur-lg{filter:blur(16px)}
+.backdrop-blur{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.grayscale{filter:grayscale(1)}.brightness-75{filter:brightness(.75)}.brightness-125{filter:brightness(1.25)}

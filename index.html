@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html data-theme="default" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="INMARIUM — the common language of design and code. Learn Framework 1.0 through visual, readable examples." name="description"/>
+<title>INMARIUM — The common language of design and code</title>
+<link href="framework.css" rel="stylesheet"/>
+<link href="docs.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="im-topbar">
+<div class="container flex row items-center justify-between gap-4">
+<a aria-label="INMARIUM home" class="im-brand" href="#top"><span>INMARIUM</span><small>by Jacaranda Group</small></a>
+<nav aria-label="Primary navigation" class="cluster gap-4 mobile-hidden">
+<a class="im-nav-link" href="#language">Language</a><a class="im-nav-link" href="#layout">Layout</a><a class="im-nav-link" href="#components">Components</a><a class="im-nav-link" href="#responsive">Responsive</a><a class="im-nav-link" href="tutorial.html">Tutorial</a><a class="im-nav-link" href="reference.html">Class Reference</a>
+<select aria-label="Theme" class="select sm im-theme" id="themeSelect"><option value="default">Light</option><option value="dark">Dark</option><option value="pastel">Pastel</option><option value="corporate">Corporate</option></select>
+</nav>
+<button aria-expanded="false" aria-label="Open menu" class="burger mobile-flex" id="menuButton"><span></span><span></span><span></span></button>
+</div>
+<nav class="im-mobile-menu stack gap-3 p-4" hidden="" id="mobileMenu"><a href="#language">Language</a><a href="#layout">Layout</a><a href="#components">Components</a><a href="#responsive">Responsive</a><a href="tutorial.html">Full Tutorial</a></nav>
+</header>
+<main id="top">
+<section class="im-hero section-lg">
+<div class="container grid cols-2 mobile-cols-1 gap-12 items-center">
+<div class="stack gap-6">
+<div class="cluster gap-3"><span class="badge accent">Framework 1.0</span><span class="text-muted">A visual language for the web</span></div>
+<h1>Design and code should speak the <em>same language.</em></h1>
+<p class="text-xl text-muted im-lead">INMARIUM turns layout, spacing, hierarchy and components into readable words. Designers can code. Developers can design.</p>
+<div class="cluster gap-3"><a class="btn primary lg rounded-full" href="#start">Start learning</a><a class="btn primary outline lg rounded-full" href="#cheatsheet">View vocabulary</a></div>
+<p class="text-sm text-muted">The common language of design and code. <strong>by Jacaranda Group</strong></p>
+</div>
+<div class="im-hero-visual card p-6 rounded-3xl shadow-xl">
+<div class="im-windowbar cluster gap-2"><i></i><i></i><i></i><span>hero.html</span></div>
+<div class="im-code-scene stack gap-5">
+<code>&lt;section class=<b>"section"</b>&gt;</code>
+<code class="indent-1">&lt;div class=<b>"container"</b>&gt;</code>
+<code class="indent-2">&lt;div class=<b>"grid cols-2 gap-8 items-center"</b>&gt;</code>
+<div class="im-translation grid cols-4 mobile-cols-2 gap-2"><span>▦<b>grid</b></span><span>Ⅱ<b>2 columns</b></span><span>↔<b>space 8</b></span><span>↕<b>center</b></span></div>
+<code class="indent-2">&lt;/div&gt;</code><code class="indent-1">&lt;/div&gt;</code><code>&lt;/section&gt;</code>
+</div>
+<p class="im-caption">You are not memorizing implementation details. You are describing the composition.</p>
+</div>
+</div>
+</section>
+<section class="section im-principle" id="language">
+<div class="container">
+<div class="im-section-head stack gap-3"><span class="im-kicker">01 — THE IDEA</span><h2>Read the interface before you build it.</h2><p class="text-lg text-muted">An INMARIUM class list is a sentence: first say what the thing is, then how it behaves, then how it should feel.</p></div>
+<div class="grid cols-3 mobile-cols-1 gap-6 mt-8">
+<article class="card p-6 rounded-2xl"><span class="im-number">01</span><h3 class="mt-4">Name the structure</h3><p class="text-muted">Start with a visual primitive: <code>grid</code>, <code>flex</code>, <code>stack</code>, <code>cluster</code>, <code>container</code>.</p></article>
+<article class="card p-6 rounded-2xl"><span class="im-number">02</span><h3 class="mt-4">Describe the relationship</h3><p class="text-muted">Add <code>cols-3</code>, <code>gap-6</code>, <code>items-center</code>, <code>justify-between</code>.</p></article>
+<article class="card p-6 rounded-2xl"><span class="im-number">03</span><h3 class="mt-4">Give it character</h3><p class="text-muted">Finish with <code>p-6</code>, <code>rounded-xl</code>, <code>shadow-lg</code>, or semantic color.</p></article>
+</div>
+</div>
+</section>
+<section class="section bg-surface-secondary" id="start">
+<div class="container">
+<div class="im-section-head stack gap-3"><span class="im-kicker">02 — FIRST SENTENCE</span><h2>Build a card without “thinking in CSS”.</h2></div>
+<div class="im-lesson grid cols-2 mobile-cols-1 gap-8 mt-8 items-stretch">
+<div class="stack gap-4">
+<div class="im-callout"><b>Designer reads:</b> “A card, vertical, with medium space, generous padding, rounded corners and a soft shadow.”</div>
+<pre class="im-code"><code>&lt;article class="card stack gap-4 p-6 rounded-xl shadow-md"&gt;
+  &lt;span class="badge primary"&gt;New&lt;/span&gt;
+  &lt;h3&gt;A readable component&lt;/h3&gt;
+  &lt;p class="text-muted"&gt;Structure becomes language.&lt;/p&gt;
+  &lt;a class="btn primary fit" href="#"&gt;Explore&lt;/a&gt;
+&lt;/article&gt;</code></pre>
+<div class="im-sentence"><span>card</span><i>→</i><span>stack</span><i>→</i><span>gap 4</span><i>→</i><span>padding 6</span><i>→</i><span>rounded</span><i>→</i><span>shadow</span></div>
+</div>
+<div class="im-stage flex items-center justify-center p-8 rounded-2xl">
+<article class="card stack gap-4 p-6 rounded-xl shadow-md im-demo-card"><span class="badge primary fit">New</span><h3>A readable component</h3><p class="text-muted">Structure becomes language.</p><a class="btn primary fit" href="#start">Explore</a></article>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="layout">
+<div class="container">
+<div class="im-section-head stack gap-3"><span class="im-kicker">03 — COMPOSITION</span><h2>Four words cover most layout thinking.</h2><p class="text-lg text-muted">Choose the relationship that matches the composition you see.</p></div>
+<div class="grid cols-2 mobile-cols-1 gap-6 mt-8">
+<article class="im-concept card p-6 rounded-2xl"><div class="flex row justify-between items-start"><div><h3>Grid</h3><p class="text-muted">Rows and columns.</p></div><code>grid cols-3 gap-4</code></div><div class="grid cols-3 gap-4 mt-6"><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+<article class="im-concept card p-6 rounded-2xl"><div class="flex row justify-between items-start"><div><h3>Stack</h3><p class="text-muted">Vertical rhythm.</p></div><code>stack gap-3</code></div><div class="stack gap-3 mt-6"><i></i><i></i><i></i></div></article>
+<article class="im-concept card p-6 rounded-2xl"><div class="flex row justify-between items-start"><div><h3>Cluster</h3><p class="text-muted">Natural wrapping groups.</p></div><code>cluster gap-3</code></div><div class="cluster gap-3 mt-6"><i></i><i></i><i></i><i></i><i></i></div></article>
+<article class="im-concept card p-6 rounded-2xl"><div class="flex row justify-between items-start"><div><h3>Flex</h3><p class="text-muted">Precise one-dimensional alignment.</p></div><code>flex row justify-between</code></div><div class="flex row justify-between items-center mt-6"><i></i><i></i><i></i></div></article>
+</div>
+</div>
+</section>
+<section class="section bg-surface-secondary">
+<div class="container">
+<div class="im-section-head stack gap-3"><span class="im-kicker">04 — SPACING</span><h2>Space is part of the sentence.</h2><p class="text-lg text-muted">The same scale drives gaps, margins and padding, so compositions keep a shared rhythm.</p></div>
+<div class="grid cols-2 mobile-cols-1 gap-8 mt-8">
+<div class="stack gap-4"><pre class="im-code"><code>gap-2   gap-4   gap-8
+p-4     px-6    py-8
+mt-6    mb-12   mx-auto</code></pre><div class="alert info">Think visually: <strong>gap</strong> is the space between children; <strong>padding</strong> is the breathing room inside; <strong>margin</strong> moves the object relative to its surroundings.</div></div>
+<div class="im-space-scale stack gap-3"><div><b>2</b><i style="--w:2rem"></i></div><div><b>4</b><i style="--w:4rem"></i></div><div><b>8</b><i style="--w:8rem"></i></div><div><b>12</b><i style="--w:12rem"></i></div><div><b>16</b><i style="--w:16rem"></i></div></div>
+</div>
+</div>
+</section>
+<section class="section" id="components">
+<div class="container">
+<div class="im-section-head stack gap-3"><span class="im-kicker">05 — COMPONENTS</span><h2>Start with meaning. Modify with plain words.</h2><p class="text-lg text-muted">Components establish the role. Modifiers describe emphasis, size and treatment.</p></div>
+<div class="im-component-row mt-8"><div><h3>Buttons</h3><code>btn primary lg rounded-full</code></div><div class="cluster gap-3"><button class="btn primary">Primary</button><button class="btn primary outline">Outline</button><button class="btn primary soft">Soft</button><button class="btn primary ghost">Ghost</button><button class="btn primary link">Link</button></div></div>
+<div class="im-component-row"><div><h3>Messages</h3><code>alert success / warning / danger / info</code></div><div class="stack gap-3"><div class="alert success">Success — the action is complete.</div><div class="alert warning">Warning — check this before continuing.</div><div class="alert danger">Danger — something needs attention.</div></div></div>
+<div class="im-component-row"><div><h3>Badges</h3><code>badge primary / success / warning</code></div><div class="cluster gap-3"><span class="badge primary">Primary</span><span class="badge success">Ready</span><span class="badge warning">Review</span><span class="badge danger">Blocked</span><span class="badge info">Info</span></div></div>
+<div class="im-component-row"><div><h3>Form language</h3><code>field → label → input</code></div><form class="form stack gap-4 im-mini-form"><div class="field"><label class="label" for="name">Project name</label><input class="input" id="name" placeholder="My new interface"/></div><div class="field"><label class="label" for="type">Type</label><select class="select" id="type"><option>Website</option><option>Application</option></select></div><button class="btn primary fit" type="button">Create</button></form></div>
+</div>
+</section>
+<section class="section im-responsive" id="responsive">
+<div class="container">
+<div class="im-section-head stack gap-3"><span class="im-kicker">06 — RESPONSIVE</span><h2>Say what changes, where it changes.</h2><p class="text-lg text-muted">Desktop can be four columns. Tablet can be two. Mobile can be one. The markup says exactly that.</p></div>
+<div class="grid cols-2 mobile-cols-1 gap-8 mt-8 items-center">
+<div class="stack gap-5"><pre class="im-code"><code>&lt;div class="grid cols-4 tablet-cols-2 mobile-cols-1 gap-6"&gt;
+  ...
+&lt;/div&gt;</code></pre><div class="im-sentence"><span>grid</span><i>→</i><span>4 desktop</span><i>→</i><span>2 tablet</span><i>→</i><span>1 mobile</span></div></div>
+<div class="im-devices"><div class="im-device desktop"><b>Desktop</b><span class="grid cols-4 gap-2"><i></i><i></i><i></i><i></i></span></div><div class="im-device tablet"><b>Tablet</b><span class="grid cols-2 gap-2"><i></i><i></i><i></i><i></i></span></div><div class="im-device phone"><b>Mobile</b><span class="stack gap-2"><i></i><i></i><i></i><i></i></span></div></div>
+</div>
+</div>
+</section>
+<section class="section bg-surface-secondary" id="cheatsheet">
+<div class="container">
+<div class="im-section-head stack gap-3"><span class="im-kicker">07 — VOCABULARY</span><h2>The language at a glance.</h2></div>
+<div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-5 mt-8">
+<article class="card p-5 rounded-xl"><h3>Display</h3><p><code>block</code> <code>flex</code> <code>grid</code> <code>hidden</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Composition</h3><p><code>stack</code> <code>cluster</code> <code>row</code> <code>column</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Alignment</h3><p><code>items-center</code> <code>justify-between</code> <code>place-center</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Grid</h3><p><code>cols-1…6</code> <code>cols-12</code> <code>span-*</code> <code>auto-fit</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Space</h3><p><code>gap-*</code> <code>p-*</code> <code>m-*</code> <code>px-*</code> <code>my-*</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Surface</h3><p><code>rounded-*</code> <code>shadow-*</code> <code>border</code> <code>bg-surface</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Type</h3><p><code>text-xl</code> <code>bold</code> <code>text-center</code> <code>leading-relaxed</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Sizing</h3><p><code>w-full</code> <code>fit</code> <code>h-screen</code> <code>max-w-lg</code></p></article>
+<article class="card p-5 rounded-xl"><h3>Responsive</h3><p><code>tablet-cols-2</code> <code>mobile-cols-1</code> <code>mobile-hidden</code></p></article>
+</div>
+</div>
+</section>
+<section class="section bg-surface-secondary" id="framework-complete"><div class="container"><div class="im-section-head stack gap-3"><span class="im-kicker">FRAMEWORK 1.0 — COMPLETE</span><h2>Navigation and application patterns are now first-class words.</h2><p class="text-lg text-muted">Navbar 2.0, collapse, drawers, button groups, input groups, validation, toasts, skeletons and modern background/type utilities are part of the language.</p></div><div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-5 mt-8"><article class="card p-5"><h3>Navigation</h3><p class="text-muted">navbar · navbar-inner · navbar-collapse · drawer · close</p></article><article class="card p-5"><h3>Forms</h3><p class="text-muted">input-group · addon · valid · invalid · required</p></article><article class="card p-5"><h3>Feedback</h3><p class="text-muted">toast · skeleton · collapse</p></article></div><div class="cluster gap-3 mt-8"><a class="btn primary" href="tutorial.html#collapse">Learn the new components</a><a class="btn primary outline" href="reference.html">Complete class reference</a></div></div></section><section class="section im-final">
+<div class="container text-center stack gap-5 items-center"><span class="im-kicker">THE PRINCIPLE</span><h2>Describe what you mean.<br/>Let the system handle the mechanics.</h2><p class="text-xl text-muted max-w-lg">INMARIUM is not about writing less CSS at any cost. It is about giving design and development a shared vocabulary.</p><a class="btn accent lg rounded-full" href="#top">Back to the beginning ↑</a></div>
+</section>
+</main>
+<footer class="im-footer"><div class="container flex row mobile-column gap-4 items-center justify-between"><div><strong>INMARIUM</strong><span> — The common language of design and code.</span></div><small>Framework 1.0 · by Jacaranda Group</small></div></footer>
+<script>
+const root=document.documentElement, theme=document.getElementById('themeSelect');
+theme.addEventListener('change',()=>root.dataset.theme=theme.value);
+const button=document.getElementById('menuButton'), menu=document.getElementById('mobileMenu');
+button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));button.classList.toggle('open',!open);menu.hidden=open;});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.hidden=true;button.classList.remove('open');button.setAttribute('aria-expanded','false')}));
+</script>
+<script defer="" src="inmarium.js"></script></body></html>

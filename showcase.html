@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html data-theme="default" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INMARIUM Framework 1.0 — Component Showcase</title>
+<link href="framework.css" rel="stylesheet"/>
+<style>
+    /* Showcase-only styles. These are NOT framework classes. */
+    :root { --docs-sidebar: 260px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--background-secondary); }
+    .docs-shell { min-height: 100vh; }
+    .docs-sidebar {
+      position: fixed; inset: 0 auto 0 0; z-index: 40; width: var(--docs-sidebar);
+      overflow-y: auto; padding: var(--space-6); background: var(--surface);
+      border-right: var(--border-1) solid var(--border-subtle);
+    }
+    .docs-main { margin-left: var(--docs-sidebar); min-width: 0; }
+    .docs-topbar {
+      position: sticky; top: 0; z-index: 30; display:flex; align-items:center; justify-content:space-between;
+      gap:var(--space-4); padding:var(--space-3) var(--space-6);
+      background:color-mix(in srgb,var(--surface) 92%,transparent); backdrop-filter:blur(12px);
+      border-bottom:var(--border-1) solid var(--border-subtle);
+    }
+    .docs-nav { display:flex; flex-direction:column; gap:2px; margin-top:var(--space-5); }
+    .docs-nav a { padding:.5rem .65rem; border-radius:var(--radius-md); color:var(--text-secondary); text-decoration:none; font-size:var(--text-sm); }
+    .docs-nav a:hover { background:var(--surface-hover); color:var(--text); }
+    .docs-section { scroll-margin-top: 82px; }
+    .demo {
+      padding:var(--space-6); background:var(--surface); border:var(--border-1) solid var(--border-subtle);
+      border-radius:var(--radius-lg); overflow:hidden;
+    }
+    .code {
+      position:relative; margin-top:var(--space-3); padding:var(--space-4); overflow:auto;
+      background:var(--gray-950); color:var(--gray-100); border-radius:var(--radius-lg);
+      font: .84rem/1.65 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      white-space:pre; tab-size:2;
+    }
+    .demo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:var(--space-3); }
+    .token-swatch { min-height:78px; padding:var(--space-3); border-radius:var(--radius-md); display:flex; align-items:flex-end; font-size:var(--text-xs); }
+    .docs-kicker { color:var(--primary); font-weight:var(--font-semibold); text-transform:uppercase; letter-spacing:.08em; font-size:var(--text-xs); }
+    .docs-note { border-left:3px solid var(--primary); padding-left:var(--space-4); color:var(--text-secondary); }
+    .demo-box { min-height:72px; padding:var(--space-3); border:1px dashed var(--border-strong); background:var(--surface-secondary); border-radius:var(--radius-md); }
+    .theme-dot { width:12px; height:12px; border-radius:50%; display:inline-block; background:var(--primary); }
+    .docs-mobile-menu { display:none; }
+    @media(max-width:900px){
+      .docs-sidebar { display:none; }
+      .docs-sidebar.open { display:block; width:min(86vw,320px); box-shadow:var(--shadow-xl); }
+      .docs-main { margin-left:0; }
+      .docs-mobile-menu { display:inline-flex; }
+    }
+  </style>
+</head>
+<body>
+<div class="docs-shell">
+<aside class="docs-sidebar" id="docsSidebar">
+<a class="brand text-xl bold" href="#top">FRAMEWORK</a>
+<p class="text-sm text-muted mt-2">Component showcase</p>
+<nav class="docs-nav">
+<a href="#foundation">Foundation</a>
+<a href="#layout">Layout</a>
+<a href="#utilities">Utilities</a>
+<a href="#buttons">Buttons</a>
+<a href="#forms">Forms</a>
+<a href="#cards">Cards</a>
+<a href="#lists">Lists</a>
+<a href="#alerts">Alerts</a>
+<a href="#badges">Badges</a>
+<a href="#tables">Tables</a>
+<a href="#navbar">Navbar &amp; Burger</a>
+<a href="#dropdown">Dropdown</a>
+<a href="#pagination">Pagination</a>
+<a href="#breadcrumbs">Breadcrumbs</a>
+<a href="#modal">Modal</a>
+<a href="#accordion">Accordion</a>
+<a href="#tabs">Tabs</a>
+<a href="#tooltip">Tooltip</a>
+<a href="#progress">Progress</a>
+<a href="#spinner">Spinner</a>
+<a href="#themes">Themes</a>
+</nav>
+</aside>
+<main class="docs-main" id="top">
+<header class="docs-topbar">
+<div class="cluster gap-2">
+<button aria-expanded="false" aria-label="Open documentation menu" class="burger docs-mobile-menu" id="docsMenuBtn"><span></span><span></span><span></span></button>
+<strong>INMARIUM Framework 1.0 — Component Showcase</strong>
+</div>
+<div class="cluster gap-2">
+<span class="theme-dot"></span>
+<select aria-label="Theme" class="select sm fit" id="themeSelect">
+<option value="default">Default</option>
+<option value="dark">Dark</option>
+<option value="pastel">Pastel</option>
+<option value="corporate">Corporate</option>
+</select>
+</div>
+</header>
+<section class="section">
+<div class="container-lg stack gap-12">
+<div class="stack gap-4">
+<span class="badge primary fit">Living documentation</span>
+<h1>Framework component showcase</h1>
+<p class="text-xl text-secondary prose">A practical overview of the framework language: tokens, layout primitives, utilities and every currently included component. Each section contains a live example and copy-ready HTML.</p>
+<div class="alert info"><div><strong>Testing rule:</strong> resize the browser, switch themes, click interactive controls and try adding utility classes directly in DevTools.</div></div>
+</div>
+<!-- FOUNDATION -->
+<section class="docs-section stack gap-6" id="foundation">
+<div><div class="docs-kicker">Foundation</div><h2>Colors, typography, spacing, radius &amp; shadow</h2></div>
+<div class="demo stack gap-6">
+<div>
+<h3 class="mb-3">Semantic colors</h3>
+<div class="demo-grid">
+<div class="token-swatch bg-primary text-inverse">primary</div>
+<div class="token-swatch bg-secondary text-inverse">secondary</div>
+<div class="token-swatch bg-success text-inverse">success</div>
+<div class="token-swatch bg-warning">warning</div>
+<div class="token-swatch bg-danger text-inverse">danger</div>
+<div class="token-swatch bg-info text-inverse">info</div>
+<div class="token-swatch bg-accent">accent</div>
+</div>
+</div>
+<div class="grid cols-2 mobile-cols-1 gap-6">
+<div class="stack gap-2">
+<h3>Typography</h3>
+<p class="text-xs">text-xs — small supporting text</p>
+<p class="text-sm">text-sm — secondary copy</p>
+<p class="text-md">text-md — default body size</p>
+<p class="text-lg">text-lg — larger body</p>
+<p class="text-xl semibold">text-xl semibold</p>
+<p class="text-2xl bold">text-2xl bold</p>
+</div>
+<div class="stack gap-3">
+<h3>Radius &amp; shadows</h3>
+<div class="demo-box rounded-sm shadow-sm">rounded-sm shadow-sm</div>
+<div class="demo-box rounded-lg shadow-md">rounded-lg shadow-md</div>
+<div class="demo-box rounded-xl shadow-lg">rounded-xl shadow-lg</div>
+</div>
+</div>
+</div>
+<pre class="code">&lt;div class="bg-primary text-inverse p-4 rounded-lg shadow-md"&gt;...&lt;/div&gt;
+&lt;p class="text-xl semibold leading-relaxed"&gt;...&lt;/p&gt;</pre>
+</section>
+<!-- LAYOUT -->
+<section class="docs-section stack gap-6" id="layout">
+<div><div class="docs-kicker">Layout</div><h2>Grid, flex, stack, cluster &amp; containers</h2></div>
+<div class="demo stack gap-8">
+<div class="stack gap-3">
+<h3>Responsive Grid</h3>
+<div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-3">
+<div class="demo-box">Column 1</div><div class="demo-box">Column 2</div><div class="demo-box">Column 3</div>
+</div>
+</div>
+<div class="grid cols-2 mobile-cols-1 gap-6">
+<div class="stack gap-3"><h3>Stack</h3><div class="stack gap-2"><span class="badge">One</span><span class="badge">Two</span><span class="badge">Three</span></div></div>
+<div class="stack gap-3"><h3>Cluster</h3><div class="cluster gap-2"><span class="badge primary">Alpha</span><span class="badge success">Beta</span><span class="badge warning">Gamma</span></div></div>
+</div>
+<div class="flex justify-between items-center gap-4 wrap demo-box"><span>justify-between</span><button class="btn primary sm">Action</button></div>
+</div>
+<pre class="code">&lt;div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-6 items-stretch"&gt;...&lt;/div&gt;
+&lt;div class="stack gap-4"&gt;...&lt;/div&gt;
+&lt;div class="cluster gap-2"&gt;...&lt;/div&gt;
+&lt;div class="flex justify-between items-center"&gt;...&lt;/div&gt;</pre>
+</section>
+<!-- UTILITIES -->
+<section class="docs-section stack gap-6" id="utilities">
+<div><div class="docs-kicker">Utilities</div><h2>Local overrides</h2></div>
+<div class="demo grid cols-3 tablet-cols-2 mobile-cols-1 gap-4">
+<div class="demo-box p-6"><strong>Spacing</strong><p class="text-sm mt-2">p-6, mt-2, gap-*</p></div>
+<div class="demo-box rounded-full text-center p-6"><strong>Radius</strong><p class="text-sm mt-2">rounded-full</p></div>
+<div class="demo-box shadow-lg p-6"><strong>Shadow</strong><p class="text-sm mt-2">shadow-lg</p></div>
+<div class="demo-box max-w-md"><strong>Sizing</strong><p class="text-sm">w-full, max-w-md, h-full</p></div>
+<div class="demo-box overflow-hidden"><strong>Overflow</strong><p class="text-sm text-nowrap">overflow-hidden + text-nowrap with deliberately long content</p></div>
+<div class="demo-box relative"><span class="badge danger absolute top-0 right-0">absolute</span><strong>Position</strong><p class="text-sm mt-4">relative / absolute</p></div>
+</div>
+<pre class="code">class="p-8 mt-4 rounded-xl shadow-lg w-full max-w-lg overflow-hidden relative"</pre>
+</section>
+<!-- BUTTONS -->
+<section class="docs-section stack gap-6" id="buttons">
+<div><div class="docs-kicker">Component</div><h2>Buttons</h2></div>
+<div class="demo stack gap-5">
+<div class="cluster gap-3"><button class="btn primary">Primary</button><button class="btn secondary">Secondary</button><button class="btn success">Success</button><button class="btn warning">Warning</button><button class="btn danger">Danger</button><button class="btn info">Info</button><button class="btn accent">Accent</button></div>
+<div class="cluster gap-3"><button class="btn primary outline">Outline</button><button class="btn primary soft">Soft</button><button class="btn primary ghost">Ghost</button><button class="btn primary link">Link</button><button class="btn primary" disabled="">Disabled</button></div>
+<div class="cluster items-end gap-3"><button class="btn primary xs">XS</button><button class="btn primary sm">SM</button><button class="btn primary md">MD</button><button class="btn primary lg rounded-full">LG rounded-full</button><button class="btn primary xl">XL</button><button aria-label="Add" class="btn btn-icon primary rounded-full">+</button></div>
+</div>
+<pre class="code">&lt;button class="btn primary lg rounded-full"&gt;Start&lt;/button&gt;
+&lt;button class="btn danger outline"&gt;Delete&lt;/button&gt;
+&lt;button class="btn primary link"&gt;Learn more&lt;/button&gt;</pre>
+</section>
+<!-- FORMS -->
+<section class="docs-section stack gap-6" id="forms">
+<div><div class="docs-kicker">Component</div><h2>Forms</h2></div>
+<div class="demo">
+<form class="form stack gap-4 max-w-lg mx-auto p-6 rounded-xl shadow-md bg-white">
+<div><h3>Start your test</h3><p class="text-secondary">Enter your contact information.</p></div>
+<div class="field"><label class="label" for="demo-name">First name</label><input class="input" id="demo-name" placeholder="First name"/><span class="hint">Use your legal first name.</span></div>
+<div class="field"><label class="label" for="demo-email">Email</label><input class="input primary" id="demo-email" placeholder="name@example.com" type="email"/></div>
+<div class="field"><label class="label" for="demo-select">Country</label><select class="select" id="demo-select"><option>South Africa</option><option>United Kingdom</option><option>United States</option></select></div>
+<div class="field"><label class="label" for="demo-message">Message</label><textarea class="textarea soft" id="demo-message" placeholder="Write something..."></textarea></div>
+<label class="check-field"><input checked="" class="checkbox" type="checkbox"/><span>I agree to the processing of personal data.</span></label>
+<label class="radio-field"><input checked="" class="radio" name="demo-radio" type="radio"/><span>Option A</span></label>
+<label class="cluster gap-3"><input checked="" class="switch" type="checkbox"/><span>Notifications</span></label>
+<button class="btn primary lg rounded-full w-full" type="button">Start</button>
+</form>
+</div>
+<pre class="code">&lt;form class="form stack gap-4 p-8 rounded-xl shadow-lg bg-white"&gt;
+  &lt;div class="field"&gt;
+    &lt;label class="label"&gt;Email&lt;/label&gt;
+    &lt;input class="input primary" type="email"&gt;
+    &lt;span class="hint"&gt;We never share your email.&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;label class="check-field"&gt;&lt;input class="checkbox" type="checkbox"&gt;&lt;span&gt;I agree&lt;/span&gt;&lt;/label&gt;
+  &lt;button class="btn primary lg rounded-full w-full"&gt;Start&lt;/button&gt;
+&lt;/form&gt;</pre>
+</section>
+<!-- CARDS -->
+<section class="docs-section stack gap-6" id="cards">
+<div><div class="docs-kicker">Component</div><h2>Cards</h2></div>
+<div class="demo grid cols-3 tablet-cols-2 mobile-cols-1 gap-5 items-stretch">
+<article class="card"><div class="card-header"><span class="badge primary">Default</span></div><div class="card-body"><h3>Card title</h3><p class="text-secondary">A standard card with border and shadow.</p></div><div class="card-footer"><button class="btn primary sm">Open</button></div></article>
+<article class="card flat"><div class="card-body"><h3>Flat card</h3><p class="text-secondary">No shadow, useful inside larger surfaces.</p></div></article>
+<article class="card hover rounded-xl shadow-md"><div class="card-body"><h3>Hover card</h3><p class="text-secondary">Composable with utility overrides.</p></div></article>
+</div>
+<pre class="code">&lt;article class="card hover rounded-xl shadow-md"&gt;
+  &lt;div class="card-body"&gt;...&lt;/div&gt;
+&lt;/article&gt;</pre>
+</section>
+<!-- LISTS -->
+<section class="docs-section stack gap-6" id="lists">
+<div><div class="docs-kicker">Component</div><h2>Lists</h2></div>
+<div class="demo grid cols-3 mobile-cols-1 gap-6">
+<div><h3 class="mb-3">Clean</h3><ul class="list"><li>First item</li><li>Second item</li><li>Third item</li></ul></div>
+<div><h3 class="mb-3">Disc</h3><ul class="list list-disc"><li>Research</li><li>Analysis</li><li>Action</li></ul></div>
+<div><h3 class="mb-3">Check</h3><ul class="list list-check"><li>Private</li><li>Fast</li><li>Practical</li></ul></div>
+</div>
+<pre class="code">&lt;ul class="list list-check"&gt;
+  &lt;li&gt;Private&lt;/li&gt;
+  &lt;li&gt;Fast&lt;/li&gt;
+&lt;/ul&gt;</pre>
+</section>
+<!-- ALERTS -->
+<section class="docs-section stack gap-6" id="alerts">
+<div><div class="docs-kicker">Component</div><h2>Alerts</h2></div>
+<div class="demo stack gap-3"><div class="alert info">Information alert.</div><div class="alert success">Success alert.</div><div class="alert warning">Warning alert.</div><div class="alert danger">Danger alert.</div></div>
+<pre class="code">&lt;div class="alert success"&gt;Saved successfully.&lt;/div&gt;</pre>
+</section>
+<!-- BADGES -->
+<section class="docs-section stack gap-6" id="badges">
+<div><div class="docs-kicker">Component</div><h2>Badges</h2></div>
+<div class="demo cluster gap-3"><span class="badge">Default</span><span class="badge primary">Primary</span><span class="badge success">Success</span><span class="badge warning">Warning</span><span class="badge danger">Danger</span><span class="badge info">Info</span></div>
+<pre class="code">&lt;span class="badge success"&gt;Approved&lt;/span&gt;</pre>
+</section>
+<!-- TABLES -->
+<section class="docs-section stack gap-6" id="tables">
+<div><div class="docs-kicker">Component</div><h2>Tables</h2></div>
+<div class="demo"><div class="table-wrap"><table class="table striped hover"><thead><tr><th>Name</th><th>Status</th><th>Score</th></tr></thead><tbody><tr><td>Anna</td><td><span class="badge success">Approved</span></td><td>92</td></tr><tr><td>Ben</td><td><span class="badge warning">Pending</span></td><td>78</td></tr><tr><td>Maria</td><td><span class="badge info">Review</span></td><td>85</td></tr></tbody></table></div></div>
+<pre class="code">&lt;div class="table-wrap"&gt;
+  &lt;table class="table striped hover"&gt;...&lt;/table&gt;
+&lt;/div&gt;</pre>
+</section>
+<!-- NAVBAR -->
+<section class="docs-section stack gap-6" id="navbar">
+<div><div class="docs-kicker">Component</div><h2>Navbar, navigation &amp; burger</h2></div>
+<div class="demo">
+<div class="navbar px-4 rounded-lg bg-white shadow-sm">
+<a class="brand bold" href="#navbar">Brand</a>
+<nav class="nav-menu mobile-hidden"><a class="nav-link active" href="#">Home</a><a class="nav-link" href="#">About</a><a class="nav-link" href="#">Contact</a></nav>
+<button aria-expanded="false" aria-label="Toggle menu" class="burger" id="demoBurger"><span></span><span></span><span></span></button>
+</div>
+<div class="nav-menu column mt-3 p-4 rounded-lg bg-white shadow-sm hidden" id="demoMobileNav"><a class="nav-link" href="#">Home</a><a class="nav-link" href="#">About</a><a class="nav-link" href="#">Contact</a></div>
+</div>
+<pre class="code">&lt;header class="navbar sticky"&gt;
+  &lt;a class="brand"&gt;Brand&lt;/a&gt;
+  &lt;nav class="nav-menu"&gt;&lt;a class="nav-link active"&gt;Home&lt;/a&gt;&lt;/nav&gt;
+  &lt;button class="burger" aria-expanded="false"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;/header&gt;</pre>
+</section>
+<!-- DROPDOWN -->
+<section class="docs-section stack gap-6" id="dropdown">
+<div><div class="docs-kicker">Interactive component</div><h2>Dropdown</h2></div>
+<div class="demo"><div class="dropdown" id="demoDropdown"><button class="btn primary outline" data-dropdown-toggle="">Actions ▾</button><div class="dropdown-menu"><a class="dropdown-item active" href="#">Edit</a><a class="dropdown-item" href="#">Duplicate</a><a class="dropdown-item" href="#">Archive</a></div></div></div>
+<pre class="code">&lt;div class="dropdown open"&gt;
+  &lt;button class="btn primary outline"&gt;Actions&lt;/button&gt;
+  &lt;div class="dropdown-menu"&gt;
+    &lt;a class="dropdown-item"&gt;Edit&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+</section>
+<!-- PAGINATION -->
+<section class="docs-section stack gap-6" id="pagination">
+<div><div class="docs-kicker">Component</div><h2>Pagination</h2></div>
+<div class="demo"><ul class="pagination"><li class="page-item disabled"><a class="page-link" href="#">‹</a></li><li><a class="page-link active" href="#">1</a></li><li><a class="page-link" href="#">2</a></li><li><a class="page-link" href="#">3</a></li><li><a class="page-link" href="#">›</a></li></ul></div>
+<pre class="code">&lt;ul class="pagination"&gt;&lt;li&gt;&lt;a class="page-link active"&gt;1&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</pre>
+</section>
+<!-- BREADCRUMBS -->
+<section class="docs-section stack gap-6" id="breadcrumbs">
+<div><div class="docs-kicker">Component</div><h2>Breadcrumbs</h2></div>
+<div class="demo"><ol class="breadcrumbs"><li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Home</a></li><li class="breadcrumb-item"><a class="breadcrumb-link" href="#">Tests</a></li><li class="breadcrumb-item active">OCA</li></ol></div>
+<pre class="code">&lt;ol class="breadcrumbs"&gt;
+  &lt;li class="breadcrumb-item"&gt;&lt;a class="breadcrumb-link"&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="breadcrumb-item active"&gt;Page&lt;/li&gt;
+&lt;/ol&gt;</pre>
+</section>
+<!-- MODAL -->
+<section class="docs-section stack gap-6" id="modal">
+<div><div class="docs-kicker">Interactive component</div><h2>Modal</h2></div>
+<div class="demo"><button class="btn primary" id="openModal">Open modal</button></div>
+<div aria-hidden="true" class="modal" id="demoModal"><div class="modal-dialog"><div class="modal-header"><h3>Confirm action</h3><button aria-label="Close" class="btn secondary ghost btn-icon rounded-full" data-modal-close="">×</button></div><div class="modal-body"><p>This modal uses only framework CSS. JavaScript toggles the <code>open</code> class.</p></div><div class="modal-footer cluster justify-end"><button class="btn secondary outline" data-modal-close="">Cancel</button><button class="btn primary" data-modal-close="">Confirm</button></div></div></div>
+<pre class="code">&lt;div class="modal open"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-header"&gt;...&lt;/div&gt;
+    &lt;div class="modal-body"&gt;...&lt;/div&gt;
+    &lt;div class="modal-footer"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+</section>
+<!-- ACCORDION -->
+<section class="docs-section stack gap-6" id="accordion">
+<div><div class="docs-kicker">Interactive component</div><h2>Accordion</h2></div>
+<div class="demo"><div class="accordion" id="demoAccordion"><div class="accordion-item open"><button aria-expanded="true" class="accordion-trigger">What is this framework?<span>+</span></button><div class="accordion-content">A CSS-first system built around readable composition.</div></div><div class="accordion-item"><button aria-expanded="false" class="accordion-trigger">Does it require JavaScript?<span>+</span></button><div class="accordion-content">No. JavaScript is only needed for interaction state where CSS is not enough.</div></div></div></div>
+<pre class="code">&lt;div class="accordion-item open"&gt;
+  &lt;button class="accordion-trigger" aria-expanded="true"&gt;Question&lt;/button&gt;
+  &lt;div class="accordion-content"&gt;Answer&lt;/div&gt;
+&lt;/div&gt;</pre>
+</section>
+<!-- TABS -->
+<section class="docs-section stack gap-6" id="tabs">
+<div><div class="docs-kicker">Interactive component</div><h2>Tabs</h2></div>
+<div class="demo" id="demoTabs"><div class="tabs" role="tablist"><button aria-selected="true" class="tab active" data-tab="overview" role="tab">Overview</button><button aria-selected="false" class="tab" data-tab="details" role="tab">Details</button><button aria-selected="false" class="tab" data-tab="settings" role="tab">Settings</button></div><div class="pt-5"><div class="tab-panel active" data-panel="overview">Overview panel content.</div><div class="tab-panel" data-panel="details">Details panel content.</div><div class="tab-panel" data-panel="settings">Settings panel content.</div></div></div>
+<pre class="code">&lt;div class="tabs"&gt;&lt;button class="tab active"&gt;Overview&lt;/button&gt;&lt;/div&gt;
+&lt;div class="tab-panel active"&gt;Panel content&lt;/div&gt;</pre>
+</section>
+<!-- TOOLTIP -->
+<section class="docs-section stack gap-6" id="tooltip">
+<div><div class="docs-kicker">Component</div><h2>Tooltip</h2></div>
+<div class="demo"><span class="tooltip"><button class="btn primary outline">Hover or focus me</button><span class="tooltip-text">Helpful contextual information.</span></span></div>
+<pre class="code">&lt;span class="tooltip"&gt;
+  &lt;button class="btn primary outline"&gt;Info&lt;/button&gt;
+  &lt;span class="tooltip-text"&gt;Helpful text&lt;/span&gt;
+&lt;/span&gt;</pre>
+</section>
+<!-- PROGRESS -->
+<section class="docs-section stack gap-6" id="progress">
+<div><div class="docs-kicker">Component</div><h2>Progress</h2></div>
+<div class="demo stack gap-5"><div><div class="flex justify-between mb-2"><span>Default</span><span>72%</span></div><div class="progress"><div class="progress-bar" style="--progress:72%"></div></div></div><div class="progress sm"><div class="progress-bar" style="--progress:45%"></div></div><div class="progress lg"><div class="progress-bar" style="--progress:88%"></div></div></div>
+<pre class="code">&lt;div class="progress"&gt;&lt;div class="progress-bar" style="--progress:72%"&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+</section>
+<!-- SPINNER -->
+<section class="docs-section stack gap-6" id="spinner">
+<div><div class="docs-kicker">Component</div><h2>Spinner</h2></div>
+<div class="demo cluster gap-6"><span class="spinner sm"></span><span class="spinner"></span><span class="spinner lg"></span><button class="btn primary"><span class="spinner sm"></span>Loading</button></div>
+<pre class="code">&lt;span class="spinner"&gt;&lt;/span&gt;
+&lt;button class="btn primary"&gt;&lt;span class="spinner sm"&gt;&lt;/span&gt;Loading&lt;/button&gt;</pre>
+</section>
+<!-- THEMES -->
+<section class="docs-section stack gap-6" id="v1-completion"><div><span class="text-primary text-sm bold">FRAMEWORK 1.0 COMPLETION</span><h2 class="mt-2">Navigation, state and loading patterns</h2><p class="text-muted">The final 1.0 audit adds the missing production primitives without turning INMARIUM into a utility generator.</p></div><div class="demo stack gap-6"><nav class="navbar bordered rounded-lg px-4 expand-tablet"><div class="navbar-inner"><a class="brand">INMARIUM</a><button aria-expanded="false" class="burger navbar-toggle" data-target="#showcaseNav" data-toggle="navbar"><span></span><span></span><span></span></button><div class="navbar-collapse" id="showcaseNav"><div class="navbar-menu"><a class="nav-link active">Home</a><a class="nav-link">Docs</a><a class="nav-link">Examples</a></div><div class="navbar-actions"><button class="btn primary sm">Start</button></div></div></div></nav><div class="cluster gap-3"><div class="button-group"><button class="btn primary">Design</button><button class="btn primary outline">Code</button></div><button class="btn secondary" data-target="#showcaseDrawer" data-toggle="drawer">Drawer</button><button class="btn success" data-target="#showcaseToast" data-toggle="toast">Toast</button></div><div class="input-group max-w-lg"><span class="addon">https://</span><input class="input" placeholder="inmarium.dev"/><button class="btn primary">Go</button></div><div class="toast success max-w-md" hidden="" id="showcaseToast"><div class="toast-body"><strong>Saved.</strong><div class="text-muted">The feedback component is reusable.</div></div><button aria-label="Close" class="close" data-dismiss="toast"></button></div><div class="drawer right" id="showcaseDrawer"><div class="drawer-header"><strong>Drawer</strong><button aria-label="Close" class="close" data-dismiss="drawer"></button></div><div class="drawer-body">Mobile navigation, filters or settings.</div></div><div class="drawer-backdrop" data-backdrop-for="showcaseDrawer"></div></div></section><section class="docs-section stack gap-6" id="themes">
+<div><div class="docs-kicker">Themes</div><h2>Semantic theme switching</h2></div>
+<div class="demo stack gap-4">
+<p>Use the selector in the top-right corner to switch the entire showcase between the included themes.</p>
+<div class="grid cols-2 mobile-cols-1 gap-4"><div class="card"><div class="card-body stack gap-3"><span class="badge primary fit">Theme aware</span><h3>Semantic surface</h3><p class="text-secondary">Components consume semantic tokens, so the same markup adapts to each theme.</p><button class="btn primary fit">Primary action</button></div></div><div class="alert success">Status colors remain semantic across themes.</div></div>
+</div>
+<pre class="code">&lt;html data-theme="dark"&gt;
+&lt;section data-theme="pastel"&gt;...&lt;/section&gt;</pre>
+</section>
+<footer class="py-12 text-center text-muted"><p>INMARIUM Framework 1.0 showcase — built primarily with the framework language.</p></footer>
+</div>
+</section>
+</main>
+</div>
+<script>
+  const root = document.documentElement;
+  const themeSelect = document.getElementById('themeSelect');
+  themeSelect.addEventListener('change', e => root.dataset.theme = e.target.value);
+
+  const docsSidebar = document.getElementById('docsSidebar');
+  const docsMenuBtn = document.getElementById('docsMenuBtn');
+  docsMenuBtn?.addEventListener('click', () => {
+    const open = docsSidebar.classList.toggle('open');
+    docsMenuBtn.classList.toggle('open', open);
+    docsMenuBtn.setAttribute('aria-expanded', open);
+  });
+  docsSidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    if (window.innerWidth <= 900) { docsSidebar.classList.remove('open'); docsMenuBtn?.classList.remove('open'); docsMenuBtn?.setAttribute('aria-expanded','false'); }
+  }));
+
+  const demoBurger = document.getElementById('demoBurger');
+  const demoMobileNav = document.getElementById('demoMobileNav');
+  demoBurger.addEventListener('click', () => {
+    const open = demoMobileNav.classList.toggle('hidden') === false;
+    demoBurger.classList.toggle('open', open);
+    demoBurger.setAttribute('aria-expanded', open);
+  });
+
+  const dropdown = document.getElementById('demoDropdown');
+  dropdown.querySelector('[data-dropdown-toggle]').addEventListener('click', e => {
+    e.stopPropagation(); dropdown.classList.toggle('open');
+  });
+  document.addEventListener('click', e => { if (!dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+
+  const modal = document.getElementById('demoModal');
+  const openModal = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); };
+  const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
+  document.getElementById('openModal').addEventListener('click', openModal);
+  modal.querySelectorAll('[data-modal-close]').forEach(btn => btn.addEventListener('click', closeModal));
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  document.querySelectorAll('#demoAccordion .accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.accordion-item');
+      const open = item.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', open);
+    });
+  });
+
+  const tabs = document.getElementById('demoTabs');
+  tabs.querySelectorAll('[data-tab]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.querySelectorAll('[data-tab]').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      tabs.querySelectorAll('[data-panel]').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+      tabs.querySelector(`[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+    });
+  });
+</script>
+<script defer="" src="inmarium.js"></script></body>
+</html>

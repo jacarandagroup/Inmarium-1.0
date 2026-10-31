@@ -1,4 +1,5 @@
-@import "colors.css";
+/* Foundation: design tokens first, then primitive styles. */
+@import "tokens.css";
 @import "spacing.css";
 @import "radius.css";
 @import "shadows.css";

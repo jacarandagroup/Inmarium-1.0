@@ -1,1 +1,5 @@
-@import "default.css";@import "dark.css";@import "pastel.css";@import "corporate.css";
+/* Themes: default must load before subtree overrides. */
+@import "default.css";
+@import "dark.css";
+@import "pastel.css";
+@import "corporate.css";

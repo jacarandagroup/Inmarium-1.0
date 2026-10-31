@@ -1,6 +1,6 @@
 @layer reset, tokens, base, themes, layout, components, utilities;
 @import "foundation/reset.css" layer(reset);
-@import "foundation/colors.css" layer(tokens);
+@import "foundation/tokens.css" layer(tokens);
 @import "foundation/spacing.css" layer(tokens);
 @import "foundation/radius.css" layer(tokens);
 @import "foundation/shadows.css" layer(tokens);

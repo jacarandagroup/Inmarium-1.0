@@ -1,4 +1,18 @@
-.collapse{display:none}
-.collapse.open,.collapse[data-open="true"]{display:block}
-.collapse.horizontal{width:0;overflow:hidden}
-.collapse.horizontal.open,.collapse.horizontal[data-open="true"]{width:auto}
+.collapse {
+    display:none;
+}
+
+.collapse.open,
+.collapse [data-open="true"] { 
+    display:block;
+}
+
+.collapse.horizontal {
+    width:0;
+    overflow:hidden;
+}
+
+.collapse.horizontal.open,
+.collapse.horizontal [data-open="true"] {
+    width:auto;
+}

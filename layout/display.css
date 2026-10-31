@@ -1,1 +1,29 @@
-.block{display:block} .inline{display:inline} .inline-block{display:inline-block} .contents{display:contents} .hidden,.none{display:none}
+.block {display:block;}
+.inline {display:inline;}
+.inline-block {display:inline-block;}
+.contents {display:contents;}
+
+.hidden,
+.none {display:none;}
+
+@media (max-width:1024px) {
+    .tablet-hidden,                         /* Hide on tablet and mobile, display on desktop */
+    .desktop-only {display:none;}           /* Display only on desktops */
+}
+
+@media (min-width:1024px) {
+    .desktop-hidden,                       /* Hide on desktop, display on tablet and mobile */
+    .tablet-only {display:none;}           /* Display only on tablets, not on desktop and mobile */
+}
+@media (max-width:480px) {
+    .tablet-only {display:none;}           /* Display only on tablets, not on desktop and mobile */
+}
+
+@media (min-width:480px) {
+    .mobily-only {display:none;}           /* Display only on mobile, not on desktop and tablet */
+}
+
+@media (max-width:480px) {
+    .mobile-hidden {display:none;}          /* Hide on mobile, display on desktop and tablet */
+}
+

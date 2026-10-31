@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-
 <html data-theme="default" lang="en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="INMARIUM Tutorial — a beginner-friendly guide to every component in Framework 1.0." name="description"/>
-<title>INMARIUM Tutorial — Learn the language of design and code</title>
-<link href="framework.css" rel="stylesheet"/><link href="docs.css" rel="stylesheet"/><link href="tutorial.css" rel="stylesheet"/>
+  <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="INMARIUM Tutorial — a beginner-friendly guide to every component in Framework 1.0." name="description"/>
+  <title>INMARIUM Tutorial — Learn the language of design and code</title>
+  <link href="framework.css" rel="stylesheet"/><link href="docs.css" rel="stylesheet"/><link href="tutorial.css" rel="stylesheet"/>
 </head>
+
 <body id="top">
-<header class="im-topbar">
-<div class="container flex row items-center justify-between gap-4">
-<a class="im-brand" href="index.html"><span>INMARIUM</span><small>by Jacaranda Group</small></a>
-<nav class="cluster gap-4 mobile-hidden"><a class="im-nav-link" href="index.html">Overview</a><a class="im-nav-link" href="#foundations">Foundations</a><a class="im-nav-link" href="#buttons">Components</a><a class="im-nav-link" href="#patterns">Patterns</a><a class="im-nav-link" href="reference.html">Class Reference</a><select class="select sm im-theme" id="themeSelect"><option value="default">Light</option><option value="dark">Dark</option><option value="pastel">Pastel</option><option value="corporate">Corporate</option></select></nav>
-<button aria-expanded="false" aria-label="Open menu" class="burger mobile-flex" id="menuButton"><span></span><span></span><span></span></button>
-</div>
-<nav class="im-mobile-menu stack gap-3 p-4" hidden="" id="mobileMenu"><a href="index.html">Overview</a><a href="#foundations">Foundations</a><a href="#buttons">Components</a><a href="#patterns">Patterns</a></nav>
-</header>
+  <header class="im-topbar">
+    <div class="container flex row items-center justify-between gap-4">
+      <a class="im-brand" href="index.html">
+        <span>INMARIUM</span>
+        <small>by Jacaranda Group</small>
+      </a>
+      
+      <nav class="cluster gap-4 mobile-hidden">
+        <a class="im-nav-link" href="index.html">Overview</a>
+        <a class="im-nav-link" href="#foundations">Foundations</a>
+        <a class="im-nav-link" href="#buttons">Components</a>
+        <a class="im-nav-link" href="#patterns">Patterns</a>
+        <a class="im-nav-link" href="reference.html">Class Reference</a>
+        <select class="select sm im-theme" id="themeSelect">
+          <option value="default">Light</option>
+          <option value="dark">Dark</option>
+          <option value="pastel">Pastel</option>
+          <option value="corporate">Corporate</option>
+        </select>
+      </nav>
+      
+      <button aria-expanded="false" aria-label="Open menu" class="burger mobile-flex" id="menuButton">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    
+    <nav class="im-mobile-menu stack gap-3 p-4" hidden="" id="mobileMenu">
+      <a href="index.html">Overview</a>
+      <a href="#foundations">Foundations</a>
+      <a href="#buttons">Components</a>
+      <a href="#patterns">Patterns</a>
+    </nav>
+  </header>
+
 <div class="t-layout">
 <aside class="t-sidebar">
 <a href="#start"><strong>Start here</strong></a>
@@ -24,7 +50,13 @@
 <h4>Reference</h4><a href="reference.html"><strong>All classes A–Z →</strong></a><h4>Build</h4><a href="#collapse">Collapse</a><a href="#drawer">Drawer</a><a href="#close">Close</a><a href="#button-group">Button Group</a><a href="#input-group">Input Group</a><a href="#validation">Validation</a><a href="#toast">Toast</a><a href="#skeleton">Skeleton</a><a href="#backgrounds">Backgrounds</a><a href="#type-modern">Modern Type</a><a href="#responsive">Responsive</a><a href="#themes">Themes</a><a href="#patterns">Complete patterns</a>
 </aside>
 <main class="t-main">
-<section class="t-hero" id="start"><div class="container stack gap-6"><div class="cluster gap-3"><span class="badge accent">Beginner Tutorial</span><span class="text-muted">Framework 1.0</span></div><h1>Learn to <em>speak</em> INMARIUM.</h1><p class="text-xl text-muted t-intro">This book teaches INMARIUM as a visual language, not as a list of CSS tricks. Every chapter explains what a component means, how to read its classes, what it looks like, and how to combine it with other words.</p><div class="cluster gap-3"><a class="btn primary lg rounded-full" href="#foundations">Begin lesson 1</a><a class="btn primary outline lg rounded-full" href="index.html">Back to overview</a><a class="btn secondary outline lg rounded-full" href="reference.html">All classes</a></div><div class="t-note max-w-xl"><strong>If you are a designer:</strong> read class names as visual instructions. <strong>If you are a developer:</strong> read them as explicit structure and state. Both lead to the same interface.</div></div></section>
+<section class="t-hero" id="start"><div class="container stack gap-6"><div class="cluster gap-3"><span class="badge accent">Beginner Tutorial</span><span class="text-muted">Framework 1.0</span></div><h1>Learn to <em>speak</em> INMARIUM.</h1><p class="text-xl text-muted t-intro">This book teaches INMARIUM as a visual language, not as a list of CSS tricks. Every chapter explains what a component means, how to read its classes, what it looks like, and how to combine it with other words.</p>
+  <!-- <div class="cluster gap-3">
+  <a class="btn primary lg rounded-full" href="#foundations">Begin lesson 1</a>
+  <a class="btn primary outline lg rounded-full" href="index.html">Back to overview</a>
+  <a class="btn secondary outline lg rounded-full" href="reference.html">All classes</a>
+</div> -->
+<div class="t-note max-w-xl"><strong>If you are a designer:</strong> read class names as visual instructions. <strong>If you are a developer:</strong> read them as explicit structure and state. Both lead to the same interface.</div></div></section>
 <section class="t-chapter" id="foundations"><div class="container stack gap-8">
 <div class="t-chapter-head stack gap-3"><span class="t-chapter-no">01 — FOUNDATIONS</span><h2>Everything begins with shared visual rules.</h2><p class="text-lg text-muted">INMARIUM keeps colors, spacing, radius, shadows, borders, typography and motion consistent. You normally use these rules through simple classes rather than editing raw values every time.</p></div>
 <div class="t-grid"><div class="stack gap-4"><h3>Think in tokens, not random values</h3><p>A spacing word such as <span class="t-word">gap-4</span> belongs to the same scale as <span class="t-word">p-4</span> and <span class="t-word">mt-4</span>. A radius word such as <span class="t-word">rounded-xl</span> is consistent everywhere.</p><div class="t-read"><strong>Read it:</strong> “Use the framework's level-4 space”, not “invent another 17px gap”.</div></div><div class="grid cols-3 gap-3"><div class="card p-4 rounded-sm shadow-xs text-center">small</div><div class="card p-4 rounded-xl shadow-md text-center">medium</div><div class="card p-4 rounded-3xl shadow-xl text-center">large</div></div></div>
@@ -78,7 +110,27 @@
   &lt;/div&gt;
 &lt;/form&gt;</code></pre><div class="t-anatomy"><span>form</span><i>→</i><span>stack</span><i>→</i><span>field</span><i>→</i><span>label</span><i>→</i><span>input</span></div></div><div class="t-demo clean"><form class="form stack gap-4 t-component-demo"><div class="field"><label class="label" for="demoEmail">Email</label><input class="input" id="demoEmail" placeholder="name@example.com" type="email"/><span class="hint">We will never share it.</span></div><div class="field"><label class="label" for="demoType">Project type</label><select class="select" id="demoType"><option>Website</option><option>Application</option><option>Prototype</option></select></div><div class="field"><label class="label" for="demoMessage">Message</label><textarea class="textarea" id="demoMessage" placeholder="Tell us what you want to build"></textarea></div><button class="btn primary fit" type="button">Continue</button></form></div></div>
 <div class="t-example stack gap-4"><h3>States and treatments</h3><div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-4"><input class="input outline" value="outline"/><input class="input soft" value="soft"/><input class="input line" value="line"/><input class="input success" value="success"/><input class="input warning" value="warning"/><input class="input danger" value="danger"/></div></div>
-<div class="t-example stack gap-4"><h3>Checkbox, radio and switch</h3><div class="stack gap-3"><label class="check-field"><input checked="" class="checkbox" type="checkbox"/><span>Send me updates</span></label><label class="radio-field"><input checked="" class="radio" name="level" type="radio"/><span>Beginner</span></label><label class="radio-field"><input class="radio" name="level" type="radio"/><span>Advanced</span></label><label class="switch"><input checked="" type="checkbox"/><span></span></label></div></div>
+<div class="t-example stack gap-4">
+  <h3>Checkbox, radio and switch</h3>
+  <div class="stack gap-3">
+    <label class="check-field">
+      <input checked="" class="checkbox" type="checkbox"/>
+      <span>Send me updates</span>
+    </label>
+    <label class="radio-field">
+      <input checked="" class="radio" name="level" type="radio"/>
+      <span>Beginner</span>
+    </label>
+    <label class="radio-field">
+      <input class="radio" name="level" type="radio"/>
+      <span>Advanced</span>
+    </label>
+    <label class="radio-field">
+      <input class="switch" checked="" type="checkbox"/>
+      <span></span>
+    </label>
+  </div>
+</div>
 </div></section>
 <section class="t-chapter bg-surface-secondary" id="cards"><div class="container stack gap-8"><div class="t-chapter-head stack gap-3"><span class="t-chapter-no">06 — CARDS</span><h2>A card groups related content into one surface.</h2><p class="text-lg text-muted">Use <code>card</code> for the container. Use header/body/footer only when the content benefits from those regions.</p></div><div class="t-grid"><pre class="t-code"><code>&lt;article class="card hover"&gt;
   &lt;header class="card-header"&gt;&lt;h3&gt;Project&lt;/h3&gt;&lt;/header&gt;
@@ -206,13 +258,16 @@
   &lt;/form&gt;
 &lt;/div&gt;</code></pre><div class="t-demo clean flex items-center justify-center"><div class="card p-8 rounded-2xl shadow-lg max-w-sm w-full"><form class="form stack gap-5"><div><span class="badge accent">Start</span><h3 class="mt-3">Create your account</h3><p class="text-muted mt-2">One small form, one readable sentence.</p></div><div class="field"><label class="label" for="finalEmail">Email</label><input class="input lg" id="finalEmail" placeholder="you@example.com" type="email"/></div><button class="btn primary lg w-full" type="button">Create account</button></form></div></div></div></div>
 <div class="t-example stack gap-5"><h3>Pattern C — The INMARIUM decision order</h3><ol class="list-decimal text-lg"><li><strong>Name the structure.</strong> Grid, stack, cluster, flex, container, component.</li><li><strong>Describe relationships.</strong> Columns, direction, alignment, wrapping.</li><li><strong>Add rhythm.</strong> Gap, padding, margin.</li><li><strong>Add visual character.</strong> Radius, shadow, border, semantic color.</li><li><strong>Describe change.</strong> Tablet and mobile behavior.</li><li><strong>Add JavaScript only for state.</strong> Open, active, selected, expanded.</li></ol></div>
-<div class="card p-8 rounded-3xl shadow-lg text-center stack gap-4 items-center"><span class="badge primary">You can now read the language</span><h2>Describe what you mean.<br/>Build what you imagine.</h2><p class="text-lg text-muted max-w-lg">INMARIUM gives designers and developers a common vocabulary for turning visual intent into working interfaces.</p><div class="cluster gap-3"><a class="btn primary lg rounded-full" href="index.html">Back to INMARIUM</a><a class="btn primary outline lg rounded-full" href="#top">Start again ↑</a></div></div>
+<div class="card p-8 rounded-3xl shadow-lg text-center stack gap-4 items-center"><span class="badge primary">You can now read the language</span><h2>Describe what you mean.<br/>Build what you imagine.</h2><p class="text-lg text-muted max-w-lg">INMARIUM gives designers and developers a common vocabulary for turning visual intent into working interfaces.</p><div class="cluster gap-3">
+  <button class="btn primary lg rounded-full" onclick="window.location.href='index.html'">Back to INMARIUM</button>
+  <button class="btn primary outline lg rounded-full" onclick="window.location.href='tutorial.html#top'">Start again ↑</button>
+</div></div>
 </div></section>
 <footer class="t-footer"><div class="container flex row mobile-column gap-4 justify-between items-center"><div><strong>INMARIUM</strong> — The common language of design and code.</div><small class="text-muted">Framework 1.0 · by Jacaranda Group</small></div></footer>
 </main>
 </div>
 <div aria-hidden="true" class="modal" id="liveModal"><div class="modal-dialog"><div class="modal-header flex justify-between items-center"><h3>Welcome to INMARIUM</h3><button aria-label="Close" class="btn ghost btn-icon" data-close-modal="">×</button></div><div class="modal-body"><p>This is a live Framework 1.0 modal. JavaScript only toggles the <code>open</code> state.</p></div><div class="modal-footer cluster justify-end"><button class="btn secondary outline" data-close-modal="">Cancel</button><button class="btn primary" data-close-modal="">Continue</button></div></div></div>
-<a aria-label="Back to top" class="btn primary btn-icon rounded-full shadow-lg t-toplink" href="#top">↑</a>
+<button aria-label="Back to top" class="btn primary btn-icon rounded-full shadow-lg t-toplink" onclick="window.location.href='tutorial.html#top'">↑</button>
 <script>
 const root=document.documentElement,theme=document.getElementById('themeSelect');theme.addEventListener('change',()=>root.dataset.theme=theme.value);document.querySelectorAll('[data-theme-choice]').forEach(b=>b.addEventListener('click',()=>{root.dataset.theme=b.dataset.themeChoice;theme.value=b.dataset.themeChoice}));
 const menuButton=document.getElementById('menuButton'),mobileMenu=document.getElementById('mobileMenu');menuButton.addEventListener('click',()=>{const o=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!o));menuButton.classList.toggle('open',!o);mobileMenu.hidden=o});

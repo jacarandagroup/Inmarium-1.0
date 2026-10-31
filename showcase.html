@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-
 <html data-theme="default" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>INMARIUM Framework 1.0 — Component Showcase</title>
-<link href="framework.css" rel="stylesheet"/>
-<style>
-    /* Showcase-only styles. These are NOT framework classes. */
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>INMARIUM — Component Showcase</title>
+  <link href="framework.css" rel="stylesheet"/>
+
+  <style>
+    /* Showcase-only styles. These are NOT Inmarium classes. */
     :root { --docs-sidebar: 260px; }
     html { scroll-behavior: smooth; }
     body { background: var(--background-secondary); }
@@ -24,7 +24,7 @@
       background:color-mix(in srgb,var(--surface) 92%,transparent); backdrop-filter:blur(12px);
       border-bottom:var(--border-1) solid var(--border-subtle);
     }
-    .docs-nav { display:flex; flex-direction:column; gap:2px; margin-top:var(--space-5); }
+    .docs-nav { display:flex; flex-direction:column; margin-top:var(--space-5); }
     .docs-nav a { padding:.5rem .65rem; border-radius:var(--radius-md); color:var(--text-secondary); text-decoration:none; font-size:var(--text-sm); }
     .docs-nav a:hover { background:var(--surface-hover); color:var(--text); }
     .docs-section { scroll-margin-top: 82px; }
@@ -42,7 +42,7 @@
     .token-swatch { min-height:78px; padding:var(--space-3); border-radius:var(--radius-md); display:flex; align-items:flex-end; font-size:var(--text-xs); }
     .docs-kicker { color:var(--primary); font-weight:var(--font-semibold); text-transform:uppercase; letter-spacing:.08em; font-size:var(--text-xs); }
     .docs-note { border-left:3px solid var(--primary); padding-left:var(--space-4); color:var(--text-secondary); }
-    .demo-box { min-height:72px; padding:var(--space-3); border:1px dashed var(--border-strong); background:var(--surface-secondary); border-radius:var(--radius-md); }
+    .demo-box { min-height:72px; padding:var(--space-3); background:var(--surface-secondary); }
     .theme-dot { width:12px; height:12px; border-radius:50%; display:inline-block; background:var(--primary); }
     .docs-mobile-menu { display:none; }
     @media(max-width:900px){
@@ -53,117 +53,176 @@
     }
   </style>
 </head>
+
 <body>
-<div class="docs-shell">
-<aside class="docs-sidebar" id="docsSidebar">
-<a class="brand text-xl bold" href="#top">FRAMEWORK</a>
-<p class="text-sm text-muted mt-2">Component showcase</p>
-<nav class="docs-nav">
-<a href="#foundation">Foundation</a>
-<a href="#layout">Layout</a>
-<a href="#utilities">Utilities</a>
-<a href="#buttons">Buttons</a>
-<a href="#forms">Forms</a>
-<a href="#cards">Cards</a>
-<a href="#lists">Lists</a>
-<a href="#alerts">Alerts</a>
-<a href="#badges">Badges</a>
-<a href="#tables">Tables</a>
-<a href="#navbar">Navbar &amp; Burger</a>
-<a href="#dropdown">Dropdown</a>
-<a href="#pagination">Pagination</a>
-<a href="#breadcrumbs">Breadcrumbs</a>
-<a href="#modal">Modal</a>
-<a href="#accordion">Accordion</a>
-<a href="#tabs">Tabs</a>
-<a href="#tooltip">Tooltip</a>
-<a href="#progress">Progress</a>
-<a href="#spinner">Spinner</a>
-<a href="#themes">Themes</a>
-</nav>
-</aside>
-<main class="docs-main" id="top">
-<header class="docs-topbar">
-<div class="cluster gap-2">
-<button aria-expanded="false" aria-label="Open documentation menu" class="burger docs-mobile-menu" id="docsMenuBtn"><span></span><span></span><span></span></button>
-<strong>INMARIUM Framework 1.0 — Component Showcase</strong>
-</div>
-<div class="cluster gap-2">
-<span class="theme-dot"></span>
-<select aria-label="Theme" class="select sm fit" id="themeSelect">
-<option value="default">Default</option>
-<option value="dark">Dark</option>
-<option value="pastel">Pastel</option>
-<option value="corporate">Corporate</option>
-</select>
-</div>
-</header>
-<section class="section">
-<div class="container-lg stack gap-12">
-<div class="stack gap-4">
-<span class="badge primary fit">Living documentation</span>
-<h1>Framework component showcase</h1>
-<p class="text-xl text-secondary prose">A practical overview of the framework language: tokens, layout primitives, utilities and every currently included component. Each section contains a live example and copy-ready HTML.</p>
-<div class="alert info"><div><strong>Testing rule:</strong> resize the browser, switch themes, click interactive controls and try adding utility classes directly in DevTools.</div></div>
-</div>
-<!-- FOUNDATION -->
-<section class="docs-section stack gap-6" id="foundation">
-<div><div class="docs-kicker">Foundation</div><h2>Colors, typography, spacing, radius &amp; shadow</h2></div>
-<div class="demo stack gap-6">
-<div>
-<h3 class="mb-3">Semantic colors</h3>
-<div class="demo-grid">
-<div class="token-swatch bg-primary text-inverse">primary</div>
-<div class="token-swatch bg-secondary text-inverse">secondary</div>
-<div class="token-swatch bg-success text-inverse">success</div>
-<div class="token-swatch bg-warning">warning</div>
-<div class="token-swatch bg-danger text-inverse">danger</div>
-<div class="token-swatch bg-info text-inverse">info</div>
-<div class="token-swatch bg-accent">accent</div>
-</div>
-</div>
-<div class="grid cols-2 mobile-cols-1 gap-6">
-<div class="stack gap-2">
-<h3>Typography</h3>
-<p class="text-xs">text-xs — small supporting text</p>
-<p class="text-sm">text-sm — secondary copy</p>
-<p class="text-md">text-md — default body size</p>
-<p class="text-lg">text-lg — larger body</p>
-<p class="text-xl semibold">text-xl semibold</p>
-<p class="text-2xl bold">text-2xl bold</p>
-</div>
-<div class="stack gap-3">
-<h3>Radius &amp; shadows</h3>
-<div class="demo-box rounded-sm shadow-sm">rounded-sm shadow-sm</div>
-<div class="demo-box rounded-lg shadow-md">rounded-lg shadow-md</div>
-<div class="demo-box rounded-xl shadow-lg">rounded-xl shadow-lg</div>
-</div>
-</div>
-</div>
-<pre class="code">&lt;div class="bg-primary text-inverse p-4 rounded-lg shadow-md"&gt;...&lt;/div&gt;
-&lt;p class="text-xl semibold leading-relaxed"&gt;...&lt;/p&gt;</pre>
-</section>
-<!-- LAYOUT -->
-<section class="docs-section stack gap-6" id="layout">
-<div><div class="docs-kicker">Layout</div><h2>Grid, flex, stack, cluster &amp; containers</h2></div>
-<div class="demo stack gap-8">
-<div class="stack gap-3">
-<h3>Responsive Grid</h3>
-<div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-3">
-<div class="demo-box">Column 1</div><div class="demo-box">Column 2</div><div class="demo-box">Column 3</div>
-</div>
-</div>
-<div class="grid cols-2 mobile-cols-1 gap-6">
-<div class="stack gap-3"><h3>Stack</h3><div class="stack gap-2"><span class="badge">One</span><span class="badge">Two</span><span class="badge">Three</span></div></div>
-<div class="stack gap-3"><h3>Cluster</h3><div class="cluster gap-2"><span class="badge primary">Alpha</span><span class="badge success">Beta</span><span class="badge warning">Gamma</span></div></div>
-</div>
-<div class="flex justify-between items-center gap-4 wrap demo-box"><span>justify-between</span><button class="btn primary sm">Action</button></div>
-</div>
-<pre class="code">&lt;div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-6 items-stretch"&gt;...&lt;/div&gt;
-&lt;div class="stack gap-4"&gt;...&lt;/div&gt;
-&lt;div class="cluster gap-2"&gt;...&lt;/div&gt;
-&lt;div class="flex justify-between items-center"&gt;...&lt;/div&gt;</pre>
-</section>
+
+  <div class="docs-shell">
+
+<!-- Docs Side - Left Side -->
+    <aside class="docs-sidebar" id="docsSidebar">
+      <a class="brand text-xl bold" href="#top">INMARIUM</a>
+      <p class="text-sm text-muted mt-2">Component showcase</p>
+
+      <nav class="docs-nav">
+        <a href="#foundation">Foundation</a>
+        <a href="#layout">Layout</a>
+        <a href="#utilities">Utilities</a>
+        <a href="#buttons">Buttons</a>
+        <a href="#forms">Forms</a>
+        <a href="#cards">Cards</a>
+        <a href="#lists">Lists</a>
+        <a href="#alerts">Alerts</a>
+        <a href="#badges">Badges</a>
+        <a href="#tables">Tables</a>
+        <a href="#navbar">Navbar &amp; Burger</a>
+        <a href="#dropdown">Dropdown</a>
+        <a href="#pagination">Pagination</a>
+        <a href="#breadcrumbs">Breadcrumbs</a>
+        <a href="#modal">Modal</a>
+        <a href="#accordion">Accordion</a>
+        <a href="#tabs">Tabs</a>
+        <a href="#tooltip">Tooltip</a>
+        <a href="#progress">Progress</a>
+        <a href="#spinner">Spinner</a>
+        <a href="#themes">Themes</a>
+      </nav>
+    </aside>
+
+    <div class="docs-main" id="top">
+    
+<!-- Header -->
+      <header class="docs-topbar">
+        <div class="cluster gap-2">
+          <button aria-expanded="false" aria-label="Open documentation menu" class="burger docs-mobile-menu" id="docsMenuBtn">
+            <span></span><span></span><span></span>
+          </button>
+          
+          <strong>INMARIUM 1.0 — Component Showcase</strong>
+        </div>
+
+        <div class="cluster gap-2">
+          <span class="theme-dot"></span>
+          <select aria-label="Theme" class="select sm fit" id="themeSelect">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+            <option value="pastel">Pastel</option>
+            <option value="corporate">Corporate</option>
+          </select>
+        </div>
+      </header>
+
+      <main class="section">
+        <div class="container-lg stack gap-12">
+
+          <div class="stack gap-4">
+            <span class="badge primary fit">Living documentation</span>
+            <h1>Framework component showcase</h1>
+            <p class="text-xl text-secondary prose">A practical overview of the framework language: tokens, layout primitives, utilities and every currently included component. Each section contains a live example and copy-ready HTML.</p>
+            <div class="alert info">
+              <div>
+                <strong>Testing rule:</strong> resize the browser, switch themes, click interactive controls and try adding utility classes directly in DevTools.
+              </div>
+            </div>
+          </div>
+
+<!-- Foundation -->
+          <section class="docs-section stack gap-6" id="foundation">
+
+            <div>
+              <div class="docs-kicker">Foundation</div>
+              <h2>Colors, typography, spacing, radius &amp; shadow</h2>
+            </div>
+
+            <div class="demo stack gap-6">
+
+              <div>
+                <h3 class="mb-3">Semantic colors</h3>
+                
+                <div class="demo-grid">
+                  <div class="token-swatch bg-primary text-inverse"><code>bg-primary text-md</code></div>
+                  <div class="token-swatch bg-secondary text-inverse"><code>bg-secondary text-sm</code></div>
+                  <div class="token-swatch bg-success text-inverse">success</div>
+                  <div class="token-swatch bg-warning">warning</div>
+                  <div class="token-swatch bg-danger text-inverse">danger</div>
+                  <div class="token-swatch bg-info text-inverse">info</div>
+                  <div class="token-swatch bg-accent">accent</div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="mb-3">Typography</h3>
+
+                <div class="stack gap-2">
+                  <p class="text-xs">text-xs — Extra small supporting text</p>
+                  <p class="text-sm underline">text-sm underline — Small size & Underline</p>
+                  <p class="text-md">text-md — Default body text size (16px)</p>
+                  <p class="text-lg italic">text-lg italic — Large text & Italic</p>
+                  <p class="text-xl semibold">text-xl semibold — Extra Large & Semibold</p>
+                  <p class="text-2xl bold">text-2xl bold — Double Extra Large & Bold text</p>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="mb-3">Radius &amp; shadows</h3>
+
+                <div class="stack gap-4">
+                  <div class="demo-box border rounded-sm shadow-sm">rounded-sm shadow-sm</div>
+                  <div class="demo-box border rounded-lg shadow-md">rounded-lg shadow-md</div>
+                  <div class="demo-box border rounded-xl shadow-lg">rounded-xl shadow-lg</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+<!-- Layout -->
+          <section class="docs-section stack gap-6" id="layout">
+
+            <div>
+              <div class="docs-kicker">Layout</div>
+              <h2>Grid, flex, stack, cluster &amp; containers</h2>
+            </div>
+
+            <div class="demo stack gap-8">
+              <div class="stack gap-3">
+                <h3>Responsive Grid</h3>
+
+                <div class="grid cols-3 tablet-cols-2 mobile-cols-1 gap-3">
+                  <div class="demo-box">Column 1</div>
+                  <div class="demo-box">Column 2</div>
+                  <div class="demo-box">Column 3</div>
+                </div>
+              </div>
+
+              <div class="grid cols-2 mobile-cols-1 gap-6">
+
+                <div class="stack gap-3">
+                  <h3>Stack</h3>
+                  <div class="stack gap-2">
+                    <span class="badge">One</span>
+                    <span class="badge">Two</span>
+                    <span class="badge">Three</span>
+                  </div>
+                </div>
+
+                <div class="stack gap-3">
+                  <h3>Cluster</h3>
+                  <div class="cluster gap-2">
+                    <span class="badge primary">Alpha</span>
+                    <span class="badge success">Beta</span>
+                    <span class="badge warning">Gamma</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="flex justify-between items-center gap-4 wrap demo-box">
+                <span>justify-between</span>
+                <button class="btn primary sm">Action</button>
+              </div>
+
+            </div>
+          </section>
+
 <!-- UTILITIES -->
 <section class="docs-section stack gap-6" id="utilities">
 <div><div class="docs-kicker">Utilities</div><h2>Local overrides</h2></div>
@@ -366,64 +425,68 @@
 </section>
 <footer class="py-12 text-center text-muted"><p>INMARIUM Framework 1.0 showcase — built primarily with the framework language.</p></footer>
 </div>
-</section>
 </main>
 </div>
-<script>
-  const root = document.documentElement;
-  const themeSelect = document.getElementById('themeSelect');
-  themeSelect.addEventListener('change', e => root.dataset.theme = e.target.value);
+</div>
 
-  const docsSidebar = document.getElementById('docsSidebar');
-  const docsMenuBtn = document.getElementById('docsMenuBtn');
-  docsMenuBtn?.addEventListener('click', () => {
-    const open = docsSidebar.classList.toggle('open');
-    docsMenuBtn.classList.toggle('open', open);
-    docsMenuBtn.setAttribute('aria-expanded', open);
-  });
-  docsSidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    if (window.innerWidth <= 900) { docsSidebar.classList.remove('open'); docsMenuBtn?.classList.remove('open'); docsMenuBtn?.setAttribute('aria-expanded','false'); }
-  }));
+  <script>
+    const root = document.documentElement;
+    const themeSelect = document.getElementById('themeSelect');
+    themeSelect.addEventListener('change', e => root.dataset.theme = e.target.value);
 
-  const demoBurger = document.getElementById('demoBurger');
-  const demoMobileNav = document.getElementById('demoMobileNav');
-  demoBurger.addEventListener('click', () => {
-    const open = demoMobileNav.classList.toggle('hidden') === false;
-    demoBurger.classList.toggle('open', open);
-    demoBurger.setAttribute('aria-expanded', open);
-  });
-
-  const dropdown = document.getElementById('demoDropdown');
-  dropdown.querySelector('[data-dropdown-toggle]').addEventListener('click', e => {
-    e.stopPropagation(); dropdown.classList.toggle('open');
-  });
-  document.addEventListener('click', e => { if (!dropdown.contains(e.target)) dropdown.classList.remove('open'); });
-
-  const modal = document.getElementById('demoModal');
-  const openModal = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); };
-  const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
-  document.getElementById('openModal').addEventListener('click', openModal);
-  modal.querySelectorAll('[data-modal-close]').forEach(btn => btn.addEventListener('click', closeModal));
-  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  document.querySelectorAll('#demoAccordion .accordion-trigger').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const item = trigger.closest('.accordion-item');
-      const open = item.classList.toggle('open');
-      trigger.setAttribute('aria-expanded', open);
+    const docsSidebar = document.getElementById('docsSidebar');
+    const docsMenuBtn = document.getElementById('docsMenuBtn');
+    docsMenuBtn?.addEventListener('click', () => {
+      const open = docsSidebar.classList.toggle('open');
+      docsMenuBtn.classList.toggle('open', open);
+      docsMenuBtn.setAttribute('aria-expanded', open);
     });
-  });
+    docsSidebar.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      if (window.innerWidth <= 900) { docsSidebar.classList.remove('open'); docsMenuBtn?.classList.remove('open'); docsMenuBtn?.setAttribute('aria-expanded','false'); }
+    }));
 
-  const tabs = document.getElementById('demoTabs');
-  tabs.querySelectorAll('[data-tab]').forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.querySelectorAll('[data-tab]').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-      tabs.querySelectorAll('[data-panel]').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
-      tabs.querySelector(`[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+    const demoBurger = document.getElementById('demoBurger');
+    const demoMobileNav = document.getElementById('demoMobileNav');
+    demoBurger.addEventListener('click', () => {
+      const open = demoMobileNav.classList.toggle('hidden') === false;
+      demoBurger.classList.toggle('open', open);
+      demoBurger.setAttribute('aria-expanded', open);
     });
-  });
-</script>
-<script defer="" src="inmarium.js"></script></body>
+
+    const dropdown = document.getElementById('demoDropdown');
+    dropdown.querySelector('[data-dropdown-toggle]').addEventListener('click', e => {
+      e.stopPropagation(); dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', e => { if (!dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+
+    const modal = document.getElementById('demoModal');
+    const openModal = () => { modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); };
+    const closeModal = () => { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); };
+    document.getElementById('openModal').addEventListener('click', openModal);
+    modal.querySelectorAll('[data-modal-close]').forEach(btn => btn.addEventListener('click', closeModal));
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    document.querySelectorAll('#demoAccordion .accordion-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.accordion-item');
+        const open = item.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', open);
+      });
+    });
+
+    const tabs = document.getElementById('demoTabs');
+    tabs.querySelectorAll('[data-tab]').forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.querySelectorAll('[data-tab]').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        tabs.querySelectorAll('[data-panel]').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+        tabs.querySelector(`[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+      });
+    });
+  </script>
+
+  <script defer="" src="inmarium.js"></script>
+
+</body>
 </html>

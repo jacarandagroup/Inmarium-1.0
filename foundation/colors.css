@@ -544,16 +544,21 @@
     --primary-hover: var(--blue-600);
     --primary-active: var(--blue-700);
     --primary-soft: var(--blue-100);
+    --primary-text: var(--blue-800);
+    --primary-border: var(--blue-300);
 
     --secondary: var(--gray-500);
     --secondary-hover: var(--gray-600);
     --secondary-active: var(--gray-700);
     --secondary-soft: var(--gray-100);
+    --secondary-text: var(--gray-800);
+    --secondary-border: var(--gray-300);
 
     --accent: var(--gold-500);
     --accent-hover: var(--gold-600);
     --accent-active: var(--gold-700);
     --accent-soft: var(--gold-100);
+    --accent-border: var(--gold-300);
 
 
     /* ===========================================
@@ -566,19 +571,15 @@
     --success-soft: var(--green-100);
     --success-text: var(--green-800);
     --success-border: var(--green-300);
-    /* --success-bg
-    --success-border
-    --success-text */
+    /* --success-bg */
     
-    --warning: var(--orange-500);
-    --warning-hover: var(--orange-600);
-    --warning-active:  var(--orange-700);
-    --warning-soft: var(--orange-100);
-    --warning-text: var(--orange-900);
-    --warning-border: var(--orange-300);
-    /* --warning-bg
-    --warning-border
-    --warning-text */
+    --warning: var(--yellow-500);
+    --warning-hover: var(--yellow-600);
+    --warning-active:  var(--yellow-700);
+    --warning-soft: var(--yellow-100);
+    --warning-text: var(--yellow-900);
+    --warning-border: var(--yellow-300);
+    /* --warning-bg */
     
     --danger: var(--red-500);
     --danger-hover: var(--red-600);
@@ -586,9 +587,7 @@
     --danger-soft: var(--red-100);
     --danger-text: var(--red-800);
     --danger-border: var(--red-300);
-    /* --danger-bg
-    --danger-border
-    --danger-text */
+    /* --danger-bg */
     
     --info: var(--cyan-500);
     --info-hover: var(--cyan-600);
@@ -596,9 +595,7 @@
     --info-soft: var(--cyan-100);
     --info-text: var(--cyan-900);
     --info-border: var(--cyan-300);
-    /* --info-bg
-    --info-border
-    --info-text */
+    /* --info-bg */
 
 
     /* ===========================================

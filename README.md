@@ -51,3 +51,10 @@ CSS remains the foundation. Interactive behavior is optional and dependency-free
 ```
 
 The script only toggles state classes/attributes for components such as navbar collapse, drawer, modal, accordion, tabs, dropdown and toast.
+
+
+
+
+
+utiilties\colors.css - INTERACTION - проверить и добавить, если больше нигде не прописано.
+					STATUS - проверить нужны ли дополнительные классы
